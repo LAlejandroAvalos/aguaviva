@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agua Viva | Agua Purificada de Máxima Pureza en Resistencia, Chaco</title>
+    <meta name="description" content="Agua Viva te ofrece agua purificada con envíos a domicilio. Recargas, dispensers, alquileres y más. Consultá nuestras promociones.">
+    <meta name="keywords" content="Agua purificada, bidones, dispenser, frío/calor, alquiler dispenser, Agua Viva, Resistencia Chaco, agua ozonificada, envíos a domicilio">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --color-rojo: #E30613;
+            --color-azul: #0056B3;
+            --color-blanco: #FFFFFF;
+            --color-gris: #F5F5F5;
+            --color-gris-oscuro: #333333;
+            --color-texto: #444444;
+            --sombra: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --transicion: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--color-texto);
+            line-height: 1.6;
+            background-color: var(--color-blanco);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--color-gris-oscuro);
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--color-rojo);
+            color: var(--color-blanco);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--sombra);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .logo-text span {
+            font-size: 1rem;
+            display: block;
+            font-weight: 400;
+        }
+
+        .horarios {
+            background-color: var(--color-azul);
+            color: var(--color-blanco);
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1542785556-6f2359418d1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 100vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--color-blanco);
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--color-blanco);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--color-rojo);
+            color: var(--color-blanco);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transicion);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background-color: var(--color-azul);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+
+        /* Promociones */
+        .promociones {
+            padding: 80px 0;
+            background-color: var(--color-gris);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--color-rojo);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .promo-card {
+            background-color: var(--color-blanco);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            transition: var(--transicion);
+        }
+
+        .promo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .promo-img {
+            height: 200px;
+            background-color: var(--color-azul);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-blanco);
+            font-size: 3rem;
+        }
+
+        .promo-content {
+            padding: 20px;
+        }
+
+        .promo-content h3 {
+            color: var(--color-rojo);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .promo-content p {
+            margin-bottom: 15px;
+        }
+
+        .precio {
+            font-weight: 700;
+            color: var(--color-azul);
+            font-size: 1.2rem;
+        }
+
+        /* Contacto */
+        .contacto {
+            padding: 80px 0;
+            background-color: var(--color-blanco);
+        }
+
+        .contacto-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contacto-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contacto-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contacto-icon {
+            background-color: var(--color-rojo);
+            color: var(--color-blanco);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contacto-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .contacto-text a {
+            transition: var(--transicion);
+        }
+
+        .contacto-text a:hover {
+            color: var(--color-rojo);
+        }
+
+        .contacto-form {
+            background-color: var(--color-gris);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transicion);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-azul);
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* CTA */
+        .cta {
+            background-color: var(--color-azul);
+            color: var(--color-blanco);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--color-blanco);
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-gris-oscuro);
+            color: var(--color-blanco);
+            padding: 50px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transicion);
+        }
+
+        .social-link:hover {
+            background-color: var(--color-rojo);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--color-rojo);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            transition: var(--transicion);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-rojo);
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp flotante */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: var(--color-blanco);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 100;
+            transition: var(--transicion);
+            animation: pulse 1.5s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .horarios {
+                display: block;
+            }
+
+            .hero {
+                margin-top: 140px;
+                height: auto;
+                padding: 80px 0;
+            }
+
+            .promo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contacto-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contacto-form {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Agua Viva Logo" id="logo">
+                <div class="logo-text">
+                    Agua Viva <span>Máxima pureza, máxima frescura</span>
+                </div>
+            </div>
+            <div class="horarios">
+                <i class="fas fa-clock"></i> Lunes a sábado 08-14hs
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Agua purificada de máxima calidad en tu hogar</h1>
+            <p>Envíos a domicilio en Resistencia y alrededores. Disfrutá del agua más pura y fresca con nuestros servicios personalizados.</p>
+            <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20más%20información%20sobre%20sus%20servicios" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Promociones -->
+    <section class="promociones">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios y Promociones</h2>
+            </div>
+            <div class="promo-grid">
+                <!-- Promo 1 -->
+                <div class="promo-card">
+                    <div class="promo-img">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="promo-content">
+                        <h3>Recarga de bidones</h3>
+                        <p>Recarga tu bidón de 12 o 20 litros con nuestra agua purificada de máxima calidad.</p>
+                        <p class="precio">Consultar precio</p>
+                        <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20saber%20el%20precio%20de%20recarga%20de%20bidones" class="btn">Consultar</a>
+                    </div>
+                </div>
+
+                <!-- Promo 2 -->
+                <div class="promo-card">
+                    <div class="promo-img">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                    <div class="promo-content">
+                        <h3>Recarga + envase incluido</h3>
+                        <p>Adquirí tu bidón nuevo con la primera recarga incluida. Varias capacidades disponibles.</p>
+                        <p class="precio">Consultar precio</p>
+                        <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20saber%20el%20precio%20de%20bidón%20nuevo%20con%20recarga" class="btn">Consultar</a>
+                    </div>
+                </div>
+
+                <!-- Promo 3 -->
+                <div class="promo-card">
+                    <div class="promo-img">
+                        <i class="fas fa-glass-whiskey"></i>
+                    </div>
+                    <div class="promo-content">
+                        <h3>Dispenser natural</h3>
+                        <p>Venta de dispensers naturales para tu hogar u oficina. Calidad garantizada.</p>
+                        <p class="precio">Consultar precio</p>
+                        <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20saber%20el%20precio%20de%20dispenser%20natural" class="btn">Consultar</a>
+                    </div>
+                </div>
+
+                <!-- Promo 4 -->
+                <div class="promo-card">
+                    <div class="promo-img">
+                        <i class="fas fa-temperature-low"></i>
+                    </div>
+                    <div class="promo-content">
+                        <h3>Equipos frío/calor</h3>
+                        <p>Dispensers con función de agua fría y caliente. Ideal para oficinas y hogares.</p>
+                        <p class="precio">Consultar precio</p>
+                        <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20saber%20el%20precio%20de%20dispenser%20frío/calor" class="btn">Consultar</a>
+                    </div>
+                </div>
+
+                <!-- Promo 5 -->
+                <div class="promo-card">
+                    <div class="promo-img">
+                        <i class="fas fa-hand-holding-water"></i>
+                    </div>
+                    <div class="promo-content">
+                        <h3>Alquiler dispenser natural</h3>
+                        <p>Alquilá tu dispenser natural con bidones incluidos. Planes flexibles para todos los bolsillos.</p>
+                        <p class="precio">Consultar precio</p>
+                        <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20saber%20el%20precio%20de%20alquiler%20de%20dispenser%20natural" class="btn">Consultar</a>
+                    </div>
+                </div>
+
+                <!-- Promo 6 -->
+                <div class="promo-card">
+                    <div class="promo-img">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <div class="promo-content">
+                        <h3>Alquiler dispenser frío/calor</h3>
+                        <p>Alquilá tu dispenser con función frío/calor y bidones incluidos. La mejor opción para tu negocio.</p>
+                        <p class="precio">Consultar precio</p>
+                        <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20saber%20el%20precio%20de%20alquiler%20de%20dispenser%20frío/calor" class="btn">Consultar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contactanos</h2>
+            </div>
+            <div class="contacto-container">
+                <div class="contacto-info">
+                    <div class="contacto-item">
+                        <div class="contacto-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contacto-text">
+                            <h3>Dirección</h3>
+                            <p>C. Silvano Dante 29, H3504FSB, Resistencia, Chaco</p>
+                        </div>
+                    </div>
+                    <div class="contacto-item">
+                        <div class="contacto-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contacto-text">
+                            <h3>Teléfono</h3>
+                            <p><a href="tel:+543624122033">0362 4122033</a></p>
+                            <p><a href="https://wa.me/5493624122033">WhatsApp: +54 9 362 412 2033</a></p>
+                        </div>
+                    </div>
+                    <div class="contacto-item">
+                        <div class="contacto-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contacto-text">
+                            <h3>Email</h3>
+                            <p><a href="mailto:aguasdelneaviva@gmail.com">aguasdelneaviva@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contacto-item">
+                        <div class="contacto-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contacto-text">
+                            <h3>Horarios de atención</h3>
+                            <p>Lunes a sábado de 08:00 a 14:00 hs</p>
+                            <p>Domingos cerrado</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contacto-form">
+                    <h3>Envíanos tu consulta</h3>
+                    <form id="contactForm" action="https://wa.me/5493624122033" method="get" target="_blank">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="text" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar por WhatsApp</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>¿Sos nuevo cliente?</h2>
+            <p>Escribí "INFO" en WhatsApp para conocer todos nuestros servicios y promociones especiales para vos 🥳</p>
+            <a href="https://wa.me/5493624122033?text=INFO" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Contactar ahora
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="https://via.placeholder.com/150x50?text=AGUA+VIVA" alt="Agua Viva">
+                    </div>
+                    <p>Agua Viva te ofrece agua purificada de máxima calidad con envíos a domicilio en Resistencia y alrededores.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/aguavivaozono" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/" class="social-link" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://wa.me/5493624122033" class="social-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#">Recarga de bidones</a></li>
+                        <li><a href="#">Venta de dispensers</a></li>
+                        <li><a href="#">Alquiler de equipos</a></li>
+                        <li><a href="#">Envíos a domicilio</a></li>
+                        <li><a href="#">Agua ozonificada</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="#promociones">Promociones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Agua Viva. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5493624122033" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Simple script para manejar el formulario
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            const whatsappUrl = `https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20mi%20nombre%20es%20${encodeURIComponent(name)}.%20Teléfono:%20${encodeURIComponent(phone)}.%20Consulta:%20${encodeURIComponent(message)}`;
+            
+            this.setAttribute('action', whatsappUrl);
+        });
+    </script>
+</body>
+</html>
