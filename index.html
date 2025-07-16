@@ -1,15 +1,48 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agua Viva | Agua Purificada de Máxima Pureza en Resistencia, Chaco</title>
-    <meta name="description" content="Agua Viva te ofrece agua purificada con envíos a domicilio. Recargas, dispensers, alquileres y más. Consultá nuestras promociones.">
-    <meta name="keywords" content="Agua purificada, bidones, dispenser, frío/calor, alquiler dispenser, Agua Viva, Resistencia Chaco, agua ozonificada, envíos a domicilio">
+    <title>Agua Viva | Agua Purificada y Dispensers en Resistencia, Chaco</title>
+    <meta name="description" content="Agua purificada de máxima calidad en Resistencia, Chaco. Envíos a domicilio a Barranqueras, Fontana y Puerto Vilelas. Bidones, dispensers y alquiler de equipos.">
+    <meta name="keywords" content="agua purificada Resistencia, bidones de agua Chaco, dispenser agua Fontana, agua ozonizada Barranqueras, reparto agua Puerto Vilelas, agua pura Chaco, dispensers frío calor">
+    <meta name="author" content="Agua Viva">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="AR-H">
+    <meta name="geo.placename" content="Resistencia">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.aguavivaresistencia.com/">
+    <meta property="og:title" content="Agua Viva | Agua Purificada y Dispensers en Resistencia, Chaco">
+    <meta property="og:description" content="Agua purificada de máxima calidad con envío a domicilio en Resistencia, Barranqueras, Fontana y Puerto Vilelas.">
+    <meta property="og:image" content="https://www.aguavivaresistencia.com/images/logo-social.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.aguavivaresistencia.com/">
+    <meta property="twitter:title" content="Agua Viva | Agua Purificada y Dispensers en Resistencia, Chaco">
+    <meta property="twitter:description" content="Agua purificada de máxima calidad con envío a domicilio en Resistencia, Barranqueras, Fontana y Puerto Vilelas.">
+    <meta property="twitter:image" content="https://www.aguavivaresistencia.com/images/logo-social.jpg">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
+    <link rel="preload" href="img/logoo.jpg" as="image">
+    
+    <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    
     <style>
         :root {
             --color-rojo: #E30613;
@@ -40,6 +73,7 @@
             font-family: 'Poppins', sans-serif;
             color: var(--color-gris-oscuro);
             margin-bottom: 1rem;
+            line-height: 1.3;
         }
 
         a {
@@ -50,6 +84,7 @@
         img {
             max-width: 100%;
             height: auto;
+            display: block;
         }
 
         .container {
@@ -85,6 +120,7 @@
 
         .logo img {
             height: 50px;
+            width: auto;
         }
 
         .logo-text {
@@ -108,9 +144,52 @@
             display: none;
         }
 
+        /* Navigation */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: var(--transicion);
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-blanco);
+            bottom: 0;
+            left: 0;
+            transition: var(--transicion);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--color-blanco);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1542785556-6f2359418d1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/hero-bg.webp') no-repeat center center/cover;
             height: 100vh;
             min-height: 500px;
             display: flex;
@@ -165,6 +244,236 @@
 
         .btn-whatsapp:hover {
             background-color: #128C7E;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: var(--color-blanco);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: var(--color-rojo);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: var(--transicion);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Products Grid */
+        .products {
+            padding: 80px 0;
+            background-color: var(--color-gris);
+        }
+
+        .text-center {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--color-blanco);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            transition: var(--transicion);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            height: 200px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image img {
+            max-height: 100%;
+            width: auto;
+        }
+
+        .product-card h3 {
+            color: var(--color-rojo);
+            padding: 0 15px;
+            margin-top: 15px;
+        }
+
+        .product-card p {
+            padding: 0 15px;
+            margin: 10px 0;
+        }
+
+        .product-card .btn {
+            margin: 15px;
+            width: calc(100% - 30px);
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background-color: var(--color-blanco);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background-color: var(--color-gris);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: var(--transicion);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--color-rojo);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+        }
+
+        .benefit-card h3 {
+            color: var(--color-azul);
+            margin-bottom: 15px;
+        }
+
+        /* Video Gallery */
+        .video-gallery {
+            padding: 80px 0;
+            background-color: var(--color-gris);
+        }
+
+        .video-gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .video-placeholder {
+            background-color: var(--color-azul);
+            color: white;
+            height: 200px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transicion);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-placeholder:hover {
+            background-color: var(--color-rojo);
+        }
+
+        .video-placeholder i {
+            margin-bottom: 15px;
+        }
+
+        /* Safety Section */
+        .safety {
+            padding: 80px 0;
+            background-color: var(--color-blanco);
+        }
+
+        .safety-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .safety-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+        }
+
+        .safety-image img {
+            width: 100%;
+            height: auto;
+            transition: var(--transicion);
+        }
+
+        .safety-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .safety-text h3 {
+            color: var(--color-rojo);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .safety-text ul {
+            list-style: none;
+        }
+
+        .safety-text li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .safety-text li i {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            color: var(--color-rojo);
         }
 
         /* Promociones */
@@ -332,6 +641,21 @@
             resize: vertical;
         }
 
+        /* Google Maps */
+        .map-container {
+            height: 400px;
+            margin-top: 40px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
         /* CTA */
         .cta {
             background-color: var(--color-azul);
@@ -372,6 +696,7 @@
 
         .footer-logo img {
             height: 60px;
+            width: auto;
         }
 
         .footer-about p {
@@ -478,10 +803,86 @@
             }
         }
 
+        /*Carrucel de cliente satisfechos*/
+        .carrusel-container {
+            overflow: hidden;
+            width: 100%;
+            height: 150px;
+            position: relative;
+        }
+
+        .carrusel-track {
+            display: flex;
+            gap: 20px;
+            animation: carruselAnim 12s linear infinite alternate;
+        }
+
+        .carrusel-track img {
+            height: 100%;
+            object-fit: contain;
+            flex-shrink: 0;
+            width: auto;
+        }
+
+        /* Animación de ida y vuelta */
+        @keyframes carruselAnim {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .carrusel-container {
+            overflow: hidden;
+            width: 100%;
+            height: 200px;
+        }
+
+        .carrusel-track img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /*VIDEO*/
+        .video-box {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .video-box p {
+            margin-top: 8px;
+            font-weight: bold;
+            color: #004b8d;
+        }
+
+        /* Optimizaciones específicas */
+        .lazy {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .lazy.loaded {
+            opacity: 1;
+        }
+
         /* Responsive */
         @media (max-width: 992px) {
             .hero h1 {
                 font-size: 2rem;
+            }
+            
+            .about-content, .safety-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .about-image, .safety-image {
+                order: -1;
             }
         }
 
@@ -499,6 +900,35 @@
                 margin-top: 140px;
                 height: auto;
                 padding: 80px 0;
+            }
+
+            /* Mobile Navigation */
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 100px;
+                left: 0;
+                width: 100%;
+                background-color: var(--color-rojo);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                gap: 15px;
+                transform: translateY(-150%);
+                transition: var(--transicion);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links a {
+                padding: 10px;
             }
 
             .promo-grid {
@@ -533,129 +963,378 @@
             }
         }
     </style>
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Agua Viva",
+      "image": "https://www.aguavivaresistencia.com/img/logo.jpg",
+      "@id": "https://www.aguavivaresistencia.com",
+      "url": "https://www.aguavivaresistencia.com",
+      "telephone": "+543624122033",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "C. Silvano Dante 29",
+        "addressLocality": "Resistencia",
+        "addressRegion": "Chaco",
+        "postalCode": "H3504FSB",
+        "addressCountry": "AR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -27.4659749,
+        "longitude": -58.9707062
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "14:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/aguavivaozono"
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="logo.jpg" alt="Agua Viva Logo" id="logo">
+                <img src="img/logoo.jpg" alt="Agua Viva - Agua purificada en Resistencia, Chaco" width="50" height="50" id="logo">
                 <div class="logo-text">
                     Agua Viva <span>Máxima pureza, máxima frescura</span>
                 </div>
             </div>
-            <div class="horarios">
-                <i class="fas fa-clock"></i> Lunes a sábado 08-14hs
-            </div>
+            
+            <nav>
+                <button class="mobile-menu-btn" aria-label="Menú de navegación">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="inicio" class="hero">
         <div class="hero-content">
-            <h1>Agua purificada de máxima calidad en tu hogar</h1>
-            <p>Envíos a domicilio en Resistencia y alrededores. Disfrutá del agua más pura y fresca con nuestros servicios personalizados.</p>
-            <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20más%20información%20sobre%20sus%20servicios" class="btn btn-whatsapp">
+            <h1>Agua purificada de máxima calidad para tu hogar u oficina</h1>
+            <p>Envíos a domicilio en Resistencia, Barranqueras, Fontana y Puerto Vilelas. Disfrutá del agua más pura y fresca con nuestros servicios personalizados.</p>
+            <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20más%20información%20sobre%20sus%20productos/servicios" class="btn btn-whatsapp">
                 <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
             </a>
         </div>
     </section>
 
-    <!-- Promociones -->
-    <section class="promociones">
+   <!-- About Section -->
+    <section id="nosotros" class="about">
         <div class="container">
             <div class="section-title">
-                <h2>Nuestros Servicios y Promociones</h2>
+                <h2>Sobre Nosotros</h2>
             </div>
-            <div class="promo-grid">
-                <!-- Promo 1 -->
-                <div class="promo-card">
-                    <div class="promo-img">
-                        <i class="fas fa-tint"></i>
-                    </div>
-                    <div class="promo-content">
-                        <h3>Recarga de bidones</h3>
-                        <p>Recarga tu bidón de 12 o 20 litros con nuestra agua purificada de máxima calidad.</p>
-                        <p class="precio">Consultar precio</p>
-                        <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20saber%20el%20precio%20de%20recarga%20de%20bidones" class="btn">Consultar</a>
-                    </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Comprometidos con tu salud desde 2015</h3>
+                    <p>En Agua Viva nos especializamos en el envasado de agua purificada de la más alta calidad en Resistencia, Chaco. Nuestra misión es proporcionar agua que cumpla con los más estrictos estándares de calidad y seguridad.</p>
+                    <p>Utilizamos tecnología de punta en nuestros procesos de purificación, incluyendo ósmosis inversa, luz ultravioleta y ozonización, para eliminar cualquier impureza, bacteria o virus, garantizando un producto final cristalino, de excelente sabor y totalmente seguro para el consumo humano.</p>
+                    <p>Nuestro compromiso va más allá de simplemente vender agua; nos preocupamos por la salud y bienestar de cada familia en Resistencia y localidades cercanas como Barranqueras, Fontana y Puerto Vilelas.</p>
                 </div>
-
-                <!-- Promo 2 -->
-                <div class="promo-card">
-                    <div class="promo-img">
-                        <i class="fas fa-wine-bottle"></i>
-                    </div>
-                    <div class="promo-content">
-                        <h3>Recarga + envase incluido</h3>
-                        <p>Adquirí tu bidón nuevo con la primera recarga incluida. Varias capacidades disponibles.</p>
-                        <p class="precio">Consultar precio</p>
-                        <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20saber%20el%20precio%20de%20bidón%20nuevo%20con%20recarga" class="btn">Consultar</a>
-                    </div>
-                </div>
-
-                <!-- Promo 3 -->
-                <div class="promo-card">
-                    <div class="promo-img">
-                        <i class="fas fa-glass-whiskey"></i>
-                    </div>
-                    <div class="promo-content">
-                        <h3>Dispenser natural</h3>
-                        <p>Venta de dispensers naturales para tu hogar u oficina. Calidad garantizada.</p>
-                        <p class="precio">Consultar precio</p>
-                        <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20saber%20el%20precio%20de%20dispenser%20natural" class="btn">Consultar</a>
-                    </div>
-                </div>
-
-                <!-- Promo 4 -->
-                <div class="promo-card">
-                    <div class="promo-img">
-                        <i class="fas fa-temperature-low"></i>
-                    </div>
-                    <div class="promo-content">
-                        <h3>Equipos frío/calor</h3>
-                        <p>Dispensers con función de agua fría y caliente. Ideal para oficinas y hogares.</p>
-                        <p class="precio">Consultar precio</p>
-                        <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20saber%20el%20precio%20de%20dispenser%20frío/calor" class="btn">Consultar</a>
-                    </div>
-                </div>
-
-                <!-- Promo 5 -->
-                <div class="promo-card">
-                    <div class="promo-img">
-                        <i class="fas fa-hand-holding-water"></i>
-                    </div>
-                    <div class="promo-content">
-                        <h3>Alquiler dispenser natural</h3>
-                        <p>Alquilá tu dispenser natural con bidones incluidos. Planes flexibles para todos los bolsillos.</p>
-                        <p class="precio">Consultar precio</p>
-                        <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20saber%20el%20precio%20de%20alquiler%20de%20dispenser%20natural" class="btn">Consultar</a>
-                    </div>
-                </div>
-
-                <!-- Promo 6 -->
-                <div class="promo-card">
-                    <div class="promo-img">
-                        <i class="fas fa-snowflake"></i>
-                    </div>
-                    <div class="promo-content">
-                        <h3>Alquiler dispenser frío/calor</h3>
-                        <p>Alquilá tu dispenser con función frío/calor y bidones incluidos. La mejor opción para tu negocio.</p>
-                        <p class="precio">Consultar precio</p>
-                        <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20saber%20el%20precio%20de%20alquiler%20de%20dispenser%20frío/calor" class="btn">Consultar</a>
-                    </div>
+                <div class="about-image">
+                    <img src="img/img.jpg" alt="Proceso de purificación de agua Agua Viva en Resistencia" loading="lazy" width="" height="">
                 </div>
             </div>
         </div>
     </section>
 
+
+    <!-- Products Section -->
+    <section id="productos" class="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios y Promociones</h2>
+                <p class="text-center">Ofrecemos diferentes opciones para satisfacer tus necesidades de agua purificada en el Gran Resistencia</p>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="img/bidon-20-y-12.jpg" alt="Bidón de agua 20L o 12L en Resistencia" loading="lazy" height="0px" width="0px">
+                    </div>
+                    <h3>Recarga de bidones</h3>
+                    <p>Recarga tu bidon de 12 y 20 litros con nuestra agua purificada de máxima calidad.</p>
+                    <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20saber%20el%20precio%20de%20Recarga%20de%20bidones" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Consultar
+                    </a>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="img/recarga-agua.jpg" alt="Recarga de agua y dispensador en Chaco" loading="lazy" width="0" height="0">
+                    </div>
+                    <h3>Recarga + Envase incluido</h3>
+                    <p>Adquirí tu bidon nuevo con la primera incluida. Varias capacidades disponibles.</p>
+                    <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20saber%20el%20precio%20de%20bidon%20nuevo%20con%20recarga" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Consultar
+                    </a>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="img/dispensor natural.jpg" alt="Dispensador natural en Fontana" loading="lazy" width="0" height="0">
+                    </div>
+                    <h3>Dispensador natural</h3>
+                    <p>Venta de dispenser naturales para tu hogar u oficina. Fácil de usar y mantener.</p>
+                    <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20saber%20el%20precio%20dispenser%20natural" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Consultar
+                    </a>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="img/dispenser-frio-calorr.jpg" alt="Dispensador frio-calor en Barranqueras" loading="lazy" width="0" height="0">
+                    </div>
+                    <h3>Dispensador frio/calor</h3>
+                    <p>Dispenser con función de agua fria y caliente al instante. Ideal para oficinas y hogares.</p>
+                    <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20saber%20el%20precio%20del%20dispenser%20frío/calor" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Consultar
+                    </a>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="img/dispensor-natural-envase.jpg" alt="Alquiler de dispensador en Puerto Vilelas" loading="lazy" width="0" height="0" >
+                    </div>
+                    <h3>Alquiler de dispenser natural</h3>
+                    <p>Alquilá tu dispenser natural con bidones de 20 litros inclidos. Planes flexibles para todos los bolsillos.</p>
+                    <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20saber%20el%20precio%20de%20alquiler%20de%20dispenser%20natural%20incluyendo%20bidones%20de%2020%20Litros" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Consultar
+                    </a>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="img/dispenser-frio-calor.jpg" alt="Alquilar Dispensador Frio/Calor en Resistencia" loading="lazy" width="0" height="0">
+                    </div>
+                    <h3>Alquiler de dispenser frío/calor</h3>
+                    <p>Alquilá tu dispenser con función frío/calor y bidones de 20 litros incluidos. La mejor opción para tu negocio.</p>
+                    <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20saber%20el%20precio%20de%20alquilar%20de%20dispenser%20frio/calor%20incluyendo%20bidones%20de%2020%20Litros" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Consultar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="beneficios" class="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>¿Por qué elegir Agua Viva?</h2>
+                <p class="text-center">Nuestro proceso de purificación garantiza agua de la más alta calidad para tu familia</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <h3>Ósmosis Inversa</h3>
+                    <p>Eliminamos el 99.9% de impurezas, metales pesados y sales disueltas mediante nuestro avanzado sistema de ósmosis inversa.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Luz Ultravioleta</h3>
+                    <p>Desinfección con luz UV que destruye bacterias, virus y otros microorganismos sin alterar las propiedades del agua.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <h3>Ozonización</h3>
+                    <p>Tratamiento con ozono que garantiza la eliminación de cualquier contaminante residual y prolonga la frescura del agua.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Análisis Periódicos</h3>
+                    <p>Realizamos controles de calidad regulares en laboratorios certificados para asegurar la pureza de nuestro producto.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>Envases Reutilizables</h3>
+                    <p>Nuestros bidones son 100% reutilizables y reciclables, reduciendo el impacto ambiental.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Entrega a Domicilio</h3>
+                    <p>Servicio de reparto eficiente en Resistencia y localidades cercanas para tu comodidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Video Gallery Section -->
+<section id="procesos" class="video-gallery">
+  <div class="container">
+    <div class="section-title">
+      <h2>Nuestro proceso productivo</h2>
+      <p class="text-center">Conocé cómo producimos el agua más pura de Resistencia y alrededores</p>
+    </div>
+
+    <div class="safety-content">
+      <div class="safety-video">
+        <video controls playsinline loading="lazy" width="100%" height="800" poster="img/video-poster.webp">
+          <source src="media/proceso.mp4" type="video/mp4">
+          <track src="subtitles/es.vtt" kind="subtitles" srclang="es" label="Español">
+          Tu navegador no soporta el elemento de video.
+        </video>
+      </div>
+
+      <div class="about-text">
+        <h3>Recepción y pretratamiento del agua</h3>
+        <p>El agua cruda ingresa a las instalaciones de Agua Viva y se somete a un pretratamiento inicial para remover impurezas físicas y orgánicas.</p>
+
+        <h3>Purificación avanzada</h3>
+        <p>La máquina de ósmosis inversa transforma el agua en:</p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Agua baja en sodio</li>
+          <li><i class="fas fa-check-circle"></i> Agua destilada</li>
+          <li><i class="fas fa-check-circle"></i> Agua de máxima pureza</li>
+        </ul>
+
+        <h3>Desinfección con ozono</h3>
+        <p>Se aplica ozono, un desinfectante natural que elimina microorganismos sin dejar residuos químicos. Esto garantiza pureza y seguridad sanitaria.</p>
+
+        <h3>Almacenamiento en tanques de reserva</h3>
+        <p>El agua purificada se almacena temporalmente en tanques especiales bajo estrictos controles de higiene.</p>
+
+        <h3>Manejo de bidones retornables</h3>
+        <p>En esta etapa se realiza un lavado riguroso:</p>
+        <ul>
+          <li><i class="fas fa-recycle"></i> Se colocan dos bidones en la máquina de lavado.</li>
+          <li><i class="fas fa-sync-alt"></i> Lavado interno y externo en dos etapas.</li>
+        </ul>
+
+        <h3>Sellado y envasado final</h3>
+        <p>Los bidones son envasados automáticamente con agua purificada, tapados y sellados bajo altos estándares de calidad y seguridad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- Safety Section -->
+    <section id="seguridad" class="safety">
+        <div class="container">
+            <div class="section-title">
+                <h2>Precinto de seguridad</h2>
+             </div>
+           </div>
+        <div class="safety-content">
+             <div class="safety-video">
+              <video controls playsinline loading="lazy" width="100%" height="500" poster="img/faja-poster.webp">
+                <source src="media/faja.mp4" type="video/mp4">
+                <track src="subtitles/es.vtt" kind="subtitles" srclang="es" label="Español">
+                Tu navegador no soporta el elemento de video.
+              </video>
+             </div>
+                <div class="about-text">
+                    <h3>Garantía de Originalidad</h3>
+                    <p>En Agua Viva implementamos un sistema de precinto de seguridad en todos nuestros bidones para garantizar que el producto que recibes es 100% original y no ha sido alterado.</p>
+                    <p>Nuestro precinto de seguridad incluye:</p>
+                    <ul>
+                        <li><i class="fas fa-lock"></i> Precinto hermético que evita filtraciones y contaminación externa.</li>
+                        <li><i class="fas fa-search-plus"></i> Etiqueta visible de seguridad para detección rápida de manipulación.</li>
+                        <li><i class="fas fa-clock"></i> Garantía de frescura extendida gracias al cierre controlado.</li>
+                        <li><i class="fas fa-shield-alt"></i> Protección integral de cada gota hasta el momento del consumo.</li>
+                        <li><i class="fas fa-thumbs-up"></i> Respaldado por procesos de control de calidad y trazabilidad.</li>
+                     </ul>
+                     <br>
+                    <p>Estas medidas de seguridad adicional protege a nuestros clientes y garantiza que el agua mantenga todas sus propiedades hasta el momento de su consumo.</p>
+                </div>
+            </div>
+    </section>
+
+
+    <!--Clientes satisfechos-->
+<div class="section-title">
+    <h2>Clientes satisfechos</h2>
+     <p class="text-center">Empresas y familias de Resistencia que confían en nuestra agua purificada</p>
+    </div>
+    <div class="carrusel-container">
+  <div class="carrusel-track">
+    <img src="img/empresa1.jpg" alt="Empresa cliente de Agua Viva en Resistencia" width="200" height="200" loading="lazy">
+    <img src="img/empresa2.jpg" alt="Cliente satisfecho de agua purificada en Chaco" width="200" height="200" loading="lazy">
+    <img src="img/empresa3.jpg" alt="Empresa que usa Agua Viva en Fontana" width="200" height="200" loading="lazy">
+    <img src="img/empresa4.jpg" alt="Cliente de agua ozonizada en Barranqueras" width="200" height="200" loading="lazy">
+    <img src="img/empresa5.jpg" alt="Empresa que compra bidones en Puerto Vilelas" width="200" height="200" loading="lazy">
+    <img src="img/empresa6.jpg" alt="Cliente satisfecho con dispensers en Resistencia" width="200" height="200" loading="lazy" >
+    <img src="img/empresa7.jpg" alt="Empresa que alquila dispensers en Chaco" width="200" height="200" loading="lazy">
+    <img src="img/empresa8.jpg" alt="Cliente de Agua Viva en el Gran Resistencia" width="200" height="200" loading="lazy" >
+  </div>
+</div>
+
+
     <!-- Contacto -->
-    <section class="contacto">
+    <section id="contacto" class="contacto">
         <div class="container">
             <div class="section-title">
                 <h2>Contactanos</h2>
+                <p class="text-center">Estamos para servirte en Resistencia y localidades cercanas</p>
             </div>
             <div class="contacto-container">
+                <div class="contacto-form">
+                    <h3>Envíanos tu consulta</h3>
+                    <form id="contactForm" action="https://wa.me/5493624122033" method="get" target="_blank">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="text" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar por WhatsApp</button>
+                    </form>
+                </div>
                 <div class="contacto-info">
                     <div class="contacto-item">
                         <div class="contacto-icon">
@@ -673,7 +1352,17 @@
                         <div class="contacto-text">
                             <h3>Teléfono</h3>
                             <p><a href="tel:+543624122033">0362 4122033</a></p>
-                            <p><a href="https://wa.me/5493624122033">WhatsApp: +54 9 362 412 2033</a></p>
+                            <p><a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20quiero%20más%20información%20sobre%20sus%20productos/Servicios">WhatsApp: +54 9 362 412 2033</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contacto-item">
+                        <div class="contacto-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="contacto-text">
+                            <h3>Instagram</h3>
+                            <p><a href="https://www.instagram.com/aguavivaozono" rel="noopener noreferrer">@aguavivaozono</a></p>
                         </div>
                     </div>
                     <div class="contacto-item">
@@ -696,24 +1385,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="contacto-form">
-                    <h3>Envíanos tu consulta</h3>
-                    <form id="contactForm" action="https://wa.me/5493624122033" method="get" target="_blank">
-                        <div class="form-group">
-                            <label for="name">Nombre</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Teléfono</label>
-                            <input type="tel" id="phone" name="phone" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mensaje</label>
-                            <textarea id="message" name="text" class="form-control" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Enviar por WhatsApp</button>
-                    </form>
-                </div>
+            </div>
+            
+            <!-- Google Maps -->
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3540.1054937178824!2d-58.97289482599522!3d-27.46597491654482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450cde44c14aaf%3A0x25a54141103023df!2sC.%20Silvano%20Dante%2029%2C%20H3504FSB%20Resistencia%2C%20Chaco!5e0!3m2!1ses!2sar!4v1752692849749!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación de Agua Viva en Resistencia"></iframe>
             </div>
         </div>
     </section>
@@ -735,17 +1411,17 @@
             <div class="footer-container">
                 <div class="footer-about">
                     <div class="footer-logo">
-                        <img src="https://via.placeholder.com/150x50?text=AGUA+VIVA" alt="Agua Viva">
+                        <img src="img/logo.jpg" alt="Agua Viva - Agua purificada en Resistencia" width="150" height="60">
                     </div>
-                    <p>Agua Viva te ofrece agua purificada de máxima calidad con envíos a domicilio en Resistencia y alrededores.</p>
+                    <p>Agua Viva te ofrece agua purificada de máxima calidad con envíos a domicilio en Resistencia, Barranqueras, Fontana y Puerto Vilelas.</p>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/aguavivaozono" class="social-link" target="_blank">
+                        <a href="https://www.instagram.com/aguavivaozono" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://www.facebook.com/" class="social-link" target="_blank">
+                        <a href="https://www.facebook.com/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://wa.me/5493624122033" class="social-link" target="_blank">
+                        <a href="https://wa.me/5493624122033" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
@@ -753,36 +1429,57 @@
                 <div class="footer-links">
                     <h3>Servicios</h3>
                     <ul>
-                        <li><a href="#">Recarga de bidones</a></li>
-                        <li><a href="#">Venta de dispensers</a></li>
-                        <li><a href="#">Alquiler de equipos</a></li>
-                        <li><a href="#">Envíos a domicilio</a></li>
-                        <li><a href="#">Agua ozonificada</a></li>
+                        <li><a href="#productos">Recarga de bidones</a></li>
+                        <li><a href="#productos">Venta de dispensers</a></li>
+                        <li><a href="#productos">Alquiler de equipos</a></li>
+                        <li><a href="#beneficios">Envíos a domicilio</a></li>
+                        <li><a href="#beneficios">Agua ozonificada</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h3>Enlaces</h3>
+                    <h3>Zonas de reparto</h3>
                     <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                        <li><a href="#promociones">Promociones</a></li>
+                        <li><a href="#contacto">Resistencia</a></li>
+                        <li><a href="#contacto">Barranqueras</a></li>
+                        <li><a href="#contacto">Fontana</a></li>
+                        <li><a href="#contacto">Puerto Vilelas</a></li>
+                        <li><a href="#contacto">Otras localidades</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Agua Viva. Todos los derechos reservados.</p>
+                <p>&copy; <span id="current-year">2023</span> Agua Viva. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/5493624122033" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/5493624122033?text=Hola%20Agua%20Viva%20quiero%20más%20información%20sobre%20sus%20productos/servicios" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
-
+        
     <script>
-        // Simple script para manejar el formulario
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-ellipsis-v"></i>';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-ellipsis-v"></i>';
+                }
+            });
+        });
+
+        // Form handler
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
@@ -791,6 +1488,48 @@
             const whatsappUrl = `https://wa.me/5493624122033?text=Hola%20Agua%20Viva,%20mi%20nombre%20es%20${encodeURIComponent(name)}.%20Teléfono:%20${encodeURIComponent(phone)}.%20Consulta:%20${encodeURIComponent(message)}`;
             
             this.setAttribute('action', whatsappUrl);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Lazy loading images
+        document.addEventListener("DOMContentLoaded", function() {
+            const lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+            
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.remove("lazy");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            }
         });
     </script>
 </body>
